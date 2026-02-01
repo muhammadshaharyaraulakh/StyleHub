@@ -56,5 +56,3 @@ Feel free to fork the repo, improve features, and submit a pull request.
 **Muhammad Shaharyar**
 Intermediate Level Full Stack Developer
 
-Just tell me 👌
-
