@@ -13,14 +13,14 @@
 <body>
     <div class="top-bar" id="topBar">
         <div class="container">
-            <span>Sign up and get 20% off to your first order. <a href="/auth/signup/signup.php">Sign Up Now</a></span>
+            <span>Sign up and get 20% off to your first order. <a href="/signup.html">Sign Up Now</a></span>
         </div>
         <button class="close-btn" onclick="document.getElementById('topBar').style.display='none'">&times;</button>
     </div>
 
     <header class="navbar">
         <div class="container nav-content">
-            <a href="/index.php" class="logo">STYLE HUB</a>
+            <a href="/index.html" class="logo">STYLE HUB</a>
 
             <nav class="nav-links">
                 <ul>
@@ -35,7 +35,7 @@
                     <li><a href="#">On Sale</a></li>
                     <li><a href="#">New Arrivals</a></li>
                     <li><a href="#">Brands</a></li>
-                    <li><a href="/auth/login/login.php">Login</a></li>
+                    <li><a href="/login.php">Login</a></li>
                 </ul>
             </nav>
 
@@ -53,7 +53,7 @@
                         <a href="#">Profile</a>
                         <a href="#">Orders</a>
                         <a href="#">Wishlist</a>
-                        <a href="/auth/logout.php">Logout</a>
+                        <a href="#">Logout</a>
                     </div>
                 </div>
 
@@ -79,9 +79,9 @@
                     Shop <i class="fa-solid fa-chevron-down chevron"></i>
                 </button>
                 <div class="mobile-submenu">
-                    <a href="/pages/Shop.php?category_id=1">Men</a>
-                    <a href="/pages/Shop.php?category_id=2">Women</a>
-                    <a href="/pages/Shop.php?category_id=3">Accessories</a>
+                    <a href="/pages/Shop.html?category_id=1">Men</a>
+                    <a href="/pages/Shop.html?category_id=2">Women</a>
+                    <a href="/pages/Shop.html?category_id=3">Accessories</a>
                 </div>
             </li>
             <li><a href="#">On Sale</a></li>
@@ -90,8 +90,8 @@
         </ul>
 
         <div class="mobile-auth-buttons">
-            <button class=" .btn-outline-nav btn-mobile"><a href="/auth/login/login.php">Log In</a></button>
-            <button class="btn-mobile btn-black"><a href="/auth/signup/signup.php">Register</a></button>
+            <button class=" .btn-outline-nav btn-mobile"><a href="/login.php">Log In</a></button>
+            <button class="btn-mobile btn-black"><a href="/signup.html">Register</a></button>
         </div>
     </aside>
 </body>
@@ -129,12 +129,10 @@
                 <polygon points="50,0 60,40 100,50 60,60 50,100 40,60 0,50 40,40" fill="black" />
             </svg>
 
-            <img src="/src/uploads/HeroImage.png"
+            <img src="/assests/HeroImage.png"
                 alt="Fashion Couple"
-                class="hero-img"
-                onerror="this.src='https://placehold.co/450x450/png?text=Hero+Image'">
+                class="hero-img">
         </div>
-    </div>
 </main>
 
 <section class="brands-bar">
@@ -151,10 +149,10 @@
     <section class="section">
         <h2 class="section-title fade-in">NEW ARRIVALS</h2>
         <div class="product-grid">
-            <a href="/pages/singleProduct.php?id=1">
+            <a href="#">
                 <div class="product-card fade-in">
                     <div class="card-image">
-                        <img src="https://placehold.co/295x298/png?text=T-Shirt" alt="T-shirt with Tape Details">
+                        <img src="/assests/TShirtWithTapeDetails.png" alt="T-shirt with Tape Details">
                     </div>
                     <div class="card-details">
                         <h3>T-shirt with Tape Details</h3>
@@ -164,10 +162,10 @@
                     </div>
                 </div>
             </a>
-            <a href="/pages/singleProduct.php?id=2">
+            <a href="#">
                 <div class="product-card fade-in">
                     <div class="card-image">
-                        <img src="https://placehold.co/295x298/png?text=Jeans" alt="Skinny Fit Jeans">
+                        <img src="/assests/SkinnyFitJeans.png" alt="Skinny Fit Jeans">
                     </div>
                     <div class="card-details">
                         <h3>Skinny Fit Jeans</h3>
@@ -179,10 +177,10 @@
                     </div>
                 </div>
             </a>
-            <a href="/pages/singleProduct.php?id=3">
+            <a href="#">
                 <div class="product-card fade-in">
                     <div class="card-image">
-                        <img src="https://placehold.co/295x298/png?text=Shirt" alt="Checkered Shirt">
+                        <img src="/assests/CheckeredShirt.png" alt="Checkered Shirt">
                     </div>
                     <div class="card-details">
                         <h3>Checkered Shirt</h3>
@@ -192,10 +190,10 @@
                     </div>
                 </div>
             </a>
-            <a href="/pages/singleProduct.php?id=4">
+            <a href="#">
                 <div class="product-card fade-in">
                     <div class="card-image">
-                        <img src="https://placehold.co/295x298/png?text=Orange+Tee" alt="Sleeve Striped T-shirt">
+                        <img src="/assests/ShirtSleeveStriped.png" alt="Sleeve Striped T-shirt">
                     </div>
                     <div class="card-details">
                         <h3>Sleeve Striped T-shirt</h3>
@@ -216,10 +214,10 @@
     <section class="section">
         <h2 class="section-title fade-in">TOP SELLING</h2>
         <div class="product-grid">
-            <a href="/pages/singleProduct.php?id=5" class="product">
+            <a href="#" class="product">
                 <div class="product-card fade-in">
                     <div class="card-image">
-                        <img src="https://placehold.co/295x298/png?text=Striped+Shirt" alt="Vertical Striped Shirt">
+                        <img src="/assests/VerticalStriped.png" alt="Vertical Striped Shirt">
                     </div>
                     <div class="card-details">
                         <h3>Vertical Striped Shirt</h3>
@@ -231,10 +229,10 @@
                     </div>
                 </div>
             </a>
-            <a href="/pages/singleProduct.php?id=6" class="product">
+            <a href="#" class="product">
                 <div class="product-card fade-in">
                     <div class="card-image">
-                        <img src="https://placehold.co/295x298/png?text=Graphic+Tee" alt="Courage Graphic T-shirt">
+                        <img src="/assests/CourageGraphicTshirt.png" alt="Courage Graphic T-shirt">
                     </div>
                     <div class="card-details">
                         <h3>Courage Graphic T-shirt</h3>
@@ -244,10 +242,10 @@
                     </div>
                 </div>
             </a>
-            <a href="/pages/singleProduct.php?id=7" class="product">
+            <a href="#" class="product">
                 <div class="product-card fade-in">
                     <div class="card-image">
-                        <img src="https://placehold.co/295x298/png?text=Shorts" alt="Loose Fit Bermuda Shorts">
+                        <img src="/assests/LooseFitBermudaShort.png" alt="Loose Fit Bermuda Shorts">
                     </div>
                     <div class="card-details">
                         <h3>Loose Fit Bermuda Shorts</h3>
@@ -257,10 +255,10 @@
                     </div>
                 </div>
             </a>
-            <a href="/pages/singleProduct.php?id=8" class="product">
+            <a href="#" class="product">
                 <div class="product-card fade-in">
                     <div class="card-image">
-                        <img src="https://placehold.co/295x298/png?text=Faded+Jeans" alt="Faded Skinny Jeans">
+                        <img src="/assests/FadedSkinnyJean.png" alt="Faded Skinny Jeans">
                     </div>
                     <div class="card-details">
                         <h3>Faded Skinny Jeans</h3>
@@ -488,7 +486,7 @@
             </div>
         </div>
     </footer>
-    <script src="/src/js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
