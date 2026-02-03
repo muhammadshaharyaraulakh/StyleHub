@@ -814,7 +814,7 @@ h1 {
     background-color: var(--bg-light);
     border: 1px solid var(--border-light);
     border-radius: 20px;
-    padding: 28px 32px;
+    padding: 3px 28px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
