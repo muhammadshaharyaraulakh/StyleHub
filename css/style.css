@@ -1,6 +1,3 @@
-/* =========================================
-    GLOBAL STYLES AND VARIABLES 
-   ========================================= */
 :root {
     --primary-black: #000000;
     --secondary-text: #00000099;
@@ -591,11 +588,6 @@ h1 {
     margin-top: 36px;
 }
 
-
-
-/* =========================================
-    ANIMATIONS & BRANDS 
-   ========================================= */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -637,10 +629,6 @@ h1 {
     font-weight: 700;
     opacity: 0.8;
 }
-
-/* =========================================
-    DRESS STYLE SECTION 
-   ========================================= */
 .dress-style-section {
     width: 100%;
     display: flex;
@@ -743,10 +731,6 @@ h1 {
     grid-column: span 1;
 }
 
-
-/* =========================================
-   TESTIMONIALS SECTION 
-   ========================================= */
 .testimonials-section {
     width: 100%;
     max-width: var(--max-width);
@@ -856,10 +840,6 @@ h1 {
     overflow: hidden;
 }
 
-
-/* =========================================
-   FOOTER SECTION 
-   ========================================= */
 .site-footer {
     position: relative;
     margin-top: 100px;
@@ -1086,9 +1066,7 @@ h1 {
 .pay-icon.bg-badge {
     padding: 2px 5px;
 }
-/* =========================================
-    SIGNUP PAGE STYLING USING ROOT VARIABLES
-   ========================================= */
+
 .login-section {
     min-height: calc(100vh - 75px);
     display: flex;
@@ -1250,9 +1228,6 @@ h1 {
     text-align: center;
     font-weight: bold;
 }
-/* =========================================
-    SHOP PAGE
-   ========================================= */
 
 @keyframes fadeIn {
     from {
@@ -1363,10 +1338,8 @@ h1 {
     border-radius: 5px;
     background: grey;
     outline: none;
-    -webkit-appearance: none;
 }
 
-/* Thumb styling */
 .styled-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 20px;
@@ -1386,8 +1359,6 @@ h1 {
     border: none;
 }
 
-
-/* Optional: make the label look like a chip */
 .size-chip {
     cursor: pointer;
     height: 50px;
@@ -1643,11 +1614,6 @@ h1 {
 }
 
 
-
-/* =========================================
-    RESPONSIVE CSS 
-   ========================================= */
-
 @media (max-width: 1200px) {
     .search-box {
         max-width: 400px;
@@ -1656,7 +1622,6 @@ h1 {
 
 @media (max-width: 992px) {
 
-    /* Navbar */
     .nav-content {
         display: grid;
         grid-template-areas: "logo links icons" "search search search";
@@ -1729,7 +1694,7 @@ h1 {
         font-size: 40px;
     }
 
-    /* Footer */
+
     .newsletter-content {
         padding: 30px 40px;
     }
@@ -1740,14 +1705,13 @@ h1 {
 
     .footer-grid {
         grid-template-columns: 1fr 1fr 1fr;
-        /* 3 Columns */
+        
     }
 
     .brand-col {
         grid-column: span 3;
         margin-bottom: 20px;
     }
-    /* shop*/
 
     .layout-grid {
         display: block;
@@ -1803,7 +1767,6 @@ h1 {
 }
 @media (max-width: 768px) {
 
-    /* Navbar */
     .nav-content {
         grid-template-areas: "logo icons" "links links" "search search";
         grid-template-columns: 1fr auto;
@@ -1817,7 +1780,6 @@ h1 {
         justify-content: center;
     }
 
-    /* Dress Style */
     .style-grid {
         grid-template-columns: 1fr;
     }
@@ -1836,12 +1798,10 @@ h1 {
         left: 24px;
     }
 
-    /* Testimonials */
     .testimonial-card {
         width: 100%;
     }
 
-    /* Mobile: 1 Card */
     .testimonials-header {
         flex-direction: column;
         align-items: flex-start;
@@ -1859,7 +1819,6 @@ h1 {
         align-self: flex-start;
     }
 
-    /* Footer */
     .newsletter-content {
         flex-direction: column;
         padding: 24px 24px;
@@ -1914,8 +1873,6 @@ h1 {
 }
 
 @media (max-width: 576px) {
-
-    /* Navbar & Header */
     .nav-links {
         display: none;
     }
@@ -1944,7 +1901,6 @@ h1 {
         grid-area: search;
     }
 
-    /* Hero */
     h1 {
         font-size: 2.2rem;
     }
@@ -1975,7 +1931,6 @@ h1 {
     }
 }
 
-/* Product Grid Logic (Min-width queries) */
 @media (max-width: 576px) {
     .product-grid {
         grid-template-columns:none;
@@ -1987,12 +1942,7 @@ h1 {
     
 }
 
-
-
-/* Very Small Mobile */
 @media (max-width: 480px) {
-
-    /* Dress Style */
     .dress-style-container {
         padding: 30px 24px;
         border-radius: 20px;
@@ -2092,11 +2042,6 @@ h1 {
         justify-content: center;
     }
 }
- /* =========================================
-           PAGE SPECIFIC STYLES
-        ========================================= */
-
-        /* --- Breadcrumbs --- */
         .breadcrumbs {
             padding: 30px 0 40px;
             display: flex;
@@ -2112,15 +2057,12 @@ h1 {
             font-weight: 500;
         }
 
-        /* --- Product Hero Section (Gallery & Details) --- */
         .product-hero {
             display: flex;
             gap: 40px;
         }
-        
-        /* Gallery */
         .product-gallery {
-            flex: 0 0 500px; /* Max width for images */
+            flex: 0 0 500px; 
             max-width: 50%;
             display: flex;
             gap: 16px;
@@ -2138,7 +2080,7 @@ h1 {
             cursor: pointer;
             border: 1px solid var(--border-light);
             transition: border 0.3s;
-            background-color: var(--bg-gray); /* Placeholder color */
+            background-color: var(--bg-gray);
         }
         .thumbnail-item:nth-child(1) {
             border-color: var(--primary-black);
@@ -2152,7 +2094,7 @@ h1 {
             flex-grow: 1;
             border-radius: 10px;
             overflow: hidden;
-            background-color: var(--bg-gray); /* Placeholder color */
+            background-color: var(--bg-gray); 
         }
         .main-image img {
             width: 100%;
@@ -2232,7 +2174,7 @@ h1 {
             transition: border-color 0.3s;
             position: relative;
         }
-        .color-swatch:nth-child(1) { /* Selected Color */
+        .color-swatch:nth-child(1) { 
             border-color: var(--primary-black);
         }
         .color-swatch:nth-child(1)::before {
@@ -2266,7 +2208,6 @@ h1 {
              border-color: #aaa;
         }
 
-        /* Quantity and CTA */
         .cta-area {
             display: flex;
             gap: 20px;
@@ -2317,8 +2258,6 @@ h1 {
         .add-to-cart-btn:hover {
             background-color: #333;
         }
-
-        /* --- Tabs & Reviews --- */
         .product-info-tabs {
             margin-top: 80px;
             padding-top: 40px;
@@ -2456,8 +2395,6 @@ h1 {
             color: var(--bg-light);
         }
 
-
-        /* --- Related Products --- */
         .related-products {
             padding: 80px 0 100px;
         }
@@ -2467,22 +2404,13 @@ h1 {
             text-align: center;
             margin-bottom: 40px;
         }
-
-
-        /* =========================================
-           RESPONSIVENESS
-        ========================================= */
-
-
-        
-        /* Tablet/Mobile Transition (<= 900px) */
         @media (max-width: 900px) {
             .product-hero {
                 flex-direction: column;
             }
             .product-gallery {
                 max-width: 100%;
-                flex-direction: row-reverse; /* Main image top for mobile */
+                flex-direction: row-reverse; 
                 gap: 20px;
             }
             .thumbnails {
@@ -2498,8 +2426,6 @@ h1 {
                 grid-template-columns: 1fr;
             }
         }
-        
-        /* Medium Mobile (<= 768px) */
         @media (max-width: 768px) {
             .related-products h2 {
                 font-size: 32px;
@@ -2520,8 +2446,6 @@ h1 {
                 font-size: 14px;
             }
         }
-
-        /* Small Mobile (<= 550px) */
         @media (max-width: 550px) {
             .product-gallery {
                 flex-direction: column; 
@@ -2544,8 +2468,6 @@ h1 {
                 max-width: none;
             }
         }
-
-        /* Very Small Mobile (<= 380px) */
         @media (max-width: 380px) {
             .product-card {
                 flex: 0 0 85%;
