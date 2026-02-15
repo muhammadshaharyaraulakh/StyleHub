@@ -1455,6 +1455,9 @@ h1 {
 .products-container {
     min-height: 500px;
 }
+.hidden-page{
+    display: none !important;
+}
 
 .products-grid {
     display: grid;
