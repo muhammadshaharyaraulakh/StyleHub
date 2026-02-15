@@ -21,6 +21,7 @@
 StyleHub/
 │
 ├── index.html
+├── OtherPages of html 
 ├── css/
 │   └── style.css
 ├── js/
@@ -54,5 +55,5 @@ Feel free to fork the repo, improve features, and submit a pull request.
 #Author
 
 **Muhammad Shaharyar**
-Intermediate Level Full Stack Developer
+
 
