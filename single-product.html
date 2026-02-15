@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <span>Sign up and get 20% off to your first order. <a href="/signup.html">Sign Up Now</a></span>
+        </div>
+        <button class="close-btn" onclick="document.getElementById('topBar').style.display='none'">&times;</button>
+    </div>
+
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="/index.html" class="logo">STYLE HUB</a>
+
+            <nav class="nav-links">
+                <ul>
+                    <li class="nav-dropdown">
+                        <a href="#">Shop <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="/pages/Shop.php?category_id=1">Men</a>
+                            <a href="/pages/Shop.php?category_id=2">Women</a>
+                            <a href="/pages/Shop.php?category_id=3">Accessories</a>
+                        </div>
+                    </li>
+                    <li><a href="#">On Sale</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Brands</a></li>
+                    <li><a href="/login.html">Login</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search for products">
+            </div>
+
+            <div class="nav-icons">
+                <button class="icon-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+
+                <div class="nav-dropdown account-dropdown">
+                    <button class="icon-btn"><i class="fa-regular fa-circle-user"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="#">Profile</a>
+                        <a href="#">Orders</a>
+                        <a href="#">Wishlist</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" id="openMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="offcanvas-overlay" id="overlay"></div>
+    <aside class="offcanvas-panel" id="offcanvas">
+        <div class="offcanvas-header">
+            <span class="logo">STYLE HUB</span>
+            <button class="menu-toggle" style="display:block" id="closeMenu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <ul class="mobile-links">
+            <li>
+                <button class="accordion-btn" id="mobileShopBtn">
+                    Shop <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="/pages/Shop.html?category_id=1">Men</a>
+                    <a href="/pages/Shop.html?category_id=2">Women</a>
+                    <a href="/pages/Shop.html?category_id=3">Accessories</a>
+                </div>
+            </li>
+            <li><a href="#">On Sale</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Brands</a></li>
+        </ul>
+
+        <div class="mobile-auth-buttons">
+            <button class=" .btn-outline-nav btn-mobile"><a href="/login.html">Log In</a></button>
+            <button class="btn-mobile btn-black"><a href="/signup.html">Register</a></button>
+        </div>
+    </aside>
+    <main class="product-page">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="#">Home</a> / <a href="#">Shop</a> / <a href="#">Men</a> / <span>T-shirts</span>
+        </div>
+
+        <section class="product-hero">
+            <div class="product-gallery">
+                <div class="thumbnails">
+                    <div class="thumbnail-item"><img src="assests/TShirtWithTapeDetails.png" alt="Side"></div>
+                    <div class="thumbnail-item"><img src="assests/CourageGraphicTshirt.png" alt="Front"></div>
+                    <div class="thumbnail-item"><img src="assests/CheckeredShirt.png" alt="Back"></div>
+                    
+                </div>
+                <div class="main-image">
+                    <img src="assests/TShirtWithTapeDetails.png" id="mainProductImg" alt="Product Name">
+                </div>
+            </div>
+
+            <div class="product-details-area">
+                <h1>Graphic T-shirt</h1>
+                <div class="price-container">
+                    <span class="current-price">$120</span>
+                    <span class="old-price">$150</span>
+                    <div class="discount-badge">-20%</div>
+                </div>
+                <p class="description">This is a premium cotton t-shirt designed for comfort and style.</p>
+
+                <div class="selector-group">
+                    <p>Select Colors</p>
+                    <div class="color-options">
+                        <div class="color-swatch" style="background-color: #6F6E54;"></div>
+                        <div class="color-swatch" style="background-color: #36494E;"></div>
+                        <div class="color-swatch" style="background-color: #A9A9A9;"></div> 
+                        <div class="color-swatch" style="background-color: #000000;"></div>
+                        
+                    </div>
+                </div>
+
+                <div class="cta-area">
+                    <div class="quantity-picker">
+                        <button class="quantity-btn" data-action="minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" data-action="plus">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-info-tabs">
+    <div class="tabs-navigation">
+        <div class="tab-item active" data-target="tab-reviews">Rating & Reviews</div>
+        <div class="tab-item" data-target="tab-details">Product Details</div>
+        <div class="tab-item" data-target="tab-faqs">FAQs</div>
+    </div>
+
+    <div id="tab-reviews" class="tab-content active">
+        <div class="reviews-header">
+            <h3>All Reviews <span>(451)</span></h3>
+            <div class="reviews-actions">
+                <button class="filter-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="21" x2="4" y2="14"></line>
+                        <line x1="4" y1="10" x2="4" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="3"></line>
+                        <line x1="20" y1="21" x2="20" y2="16"></line>
+                        <line x1="20" y1="12" x2="20" y2="3"></line>
+                        <line x1="1" y1="14" x2="7" y2="14"></line>
+                        <line x1="9" y1="8" x2="15" y2="8"></line>
+                        <line x1="17" y1="16" x2="23" y2="16"></line>
+                    </svg>
+                </button>
+                <button class="write-review-btn">Write a Review</button>
+            </div>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="menu-dots">...</div>
+                </div>
+                <div class="review-author">Samantha D. <span class="verified-badge">✔</span></div>
+                <p class="review-body">"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt."</p>
+                <p class="review-date">Posted on August 14, 2023</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-stars">★★★★☆</div>
+                    <div class="menu-dots">...</div>
+                </div>
+                <div class="review-author">Alex M. <span class="verified-badge">✔</span></div>
+                <p class="review-body">"The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I'm quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me."</p>
+                <p class="review-date">Posted on August 15, 2023</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="menu-dots">...</div>
+                </div>
+                <div class="review-author">Ethan R. <span class="verified-badge">✔</span></div>
+                <p class="review-body">"This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt."</p>
+                <p class="review-date">Posted on August 16, 2023</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="menu-dots">...</div>
+                </div>
+                <div class="review-author">Olivia P. <span class="verified-badge">✔</span></div>
+                <p class="review-body">"As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out."</p>
+                <p class="review-date">Posted on August 17, 2023</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-stars">★★★★☆</div>
+                    <div class="menu-dots">...</div>
+                </div>
+                <div class="review-author">Liam K. <span class="verified-badge">✔</span></div>
+                <p class="review-body">"This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion."</p>
+                <p class="review-date">Posted on August 18, 2023</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="menu-dots">...</div>
+                </div>
+                <div class="review-author">Ava H. <span class="verified-badge">✔</span></div>
+                <p class="review-body">"I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."</p>
+                <p class="review-date">Posted on August 19, 2023</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="menu-dots">...</div>
+                </div>
+                <div class="review-author">Lucas G. <span class="verified-badge">✔</span></div>
+                <p class="review-body">"Absolutely stunning quality. I've washed it five times already and the print hasn't faded a bit. The heavy-weight cotton feels premium and durable. Highly recommended for daily wear."</p>
+                <p class="review-date">Posted on August 20, 2023</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-stars">★★★★☆</div>
+                    <div class="menu-dots">...</div>
+                </div>
+                <div class="review-author">Sophie T. <span class="verified-badge">✔</span></div>
+                <p class="review-body">"Great fit, slightly oversized which is exactly what I was looking for. The stitching is solid and the neck ribbing is high quality. Shipping was also super fast."</p>
+                <p class="review-date">Posted on August 21, 2023</p>
+            </div>
+        </div>
+
+        <div class="load-more-wrapper">
+            <button class="load-more-btn">Load More Reviews</button>
+        </div>
+    </div>
+
+    <div id="tab-details" class="tab-content">
+        <div class="details-container">
+            <div class="details-text">
+                <h3>Elevate Your Everyday Style</h3>
+                <p>Crafted for the modern aesthete, this Graphic T-shirt blends contemporary design with timeless comfort. Made from 100% organic cotton, it offers a breathable, soft-touch feel that lasts all day. The relaxed fit ensures freedom of movement, making it perfect for both creative work sessions and weekend outings.</p>
+                <p>The high-density screen print is cured for durability, ensuring the design remains vibrant wash after wash. Reinforced shoulder stitching and a ribbed crew neck prevent stretching, maintaining the shirt's structure over time.</p>
+                <h3>Sustainability First</h3>
+                <p>We believe in fashion that respects the planet. This garment is produced in a carbon-neutral facility using water-based inks that are free from harmful chemicals. Our packaging is 100% biodegradable.</p>
+            </div>
+            <div class="details-specs">
+                <table class="specs-table">
+                    <tr>
+                        <td>Material</td>
+                        <td>100% Organic Cotton</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>240 GSM (Heavyweight)</td>
+                    </tr>
+                    <tr>
+                        <td>Fit Type</td>
+                        <td>Relaxed / Oversized Boxy Fit</td>
+                    </tr>
+                    <tr>
+                        <td>Neckline</td>
+                        <td>Ribbed Crew Neck</td>
+                    </tr>
+                    <tr>
+                        <td>Care</td>
+                        <td>Machine wash cold, tumble dry low</td>
+                    </tr>
+                    <tr>
+                        <td>Origin</td>
+                        <td>Designed in Italy, Made in Portugal</td>
+                    </tr>
+                    <tr>
+                        <td>SKU</td>
+                        <td>GRPH-TEE-004-BLK</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-faqs" class="tab-content">
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is the return policy?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We offer a hassle-free 30-day return policy. If you're not completely satisfied with your purchase, you can return it for a full refund or exchange, provided the item is unworn, unwashed, and has all original tags attached.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I find the right size?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We recommend checking our Size Guide located near the size selector. This t-shirt features a relaxed, slightly oversized fit. If you prefer a more fitted look, we suggest sizing down one size from your regular fit.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you ship internationally?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we ship to over 100 countries worldwide. International shipping rates are calculated at checkout based on your location. Please note that custom duties and taxes may apply depending on your country's regulations.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Will the print fade after washing?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    No, we use premium high-density screen printing techniques and cure the ink at high temperatures to ensure maximum durability. To prolong the life of the print, we recommend washing the shirt inside out in cold water.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is the packaging eco-friendly?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. We are committed to sustainability. All our orders are shipped in 100% compostable mailers, and we avoid using single-use plastics in our internal packaging.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I change my order after placing it?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Our warehouse processes orders quickly, but if you contact our support team within 1 hour of placing your order, we will do our best to accommodate changes to size or color before it ships.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+</main>
+        <footer class="site-footer">
+
+        <div class="newsletter-container fade-in">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope mail-icon"></i>
+                        <input type="email" placeholder="Enter Gmail" required>
+                    </div>
+                    <button type="submit" class="newsletter-btn">Subscribe to Newsletter</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="footer-wrapper fade-in">
+
+                <div class="footer-grid">
+
+                    <div class="footer-col brand-col">
+                        <h2 class="footer-logo">STYLE HUB</h2>
+                        <p class="brand-desc">We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Twitter">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook" class="active">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="Github">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Works</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>HELP</h3>
+                        <ul>
+                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="#">Delivery Details</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>FAQ</h3>
+                        <ul>
+                            <li><a href="#">Account</a></li>
+                            <li><a href="#">Manage Deliveries</a></li>
+                            <li><a href="#">Orders</a></li>
+                            <li><a href="#">Payments</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>RESOURCES</h3>
+                        <ul>
+                            <li><a href="#">Free eBooks</a></li>
+                            <li><a href="#">Development Tutorial</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Youtube Playlist</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-meta">
+                    <p class="copyright">Style Hub © 2025 All Rights Reserved</p>
+                    <div class="payment-badges">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="pay-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="pay-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="pay-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" alt="Apple Pay" class="pay-icon bg-badge">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/singleProduct.js"></script>
+
+</body>
+
+</html>
