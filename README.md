@@ -1,59 +1,16 @@
-# StyleHub
-**StyleHub** is a modern, responsive e-commerce web template built using **HTML, CSS, and JavaScript**. It features a clean and user-friendly interface with reusable components, making it ideal for small online stores, frontend practice, or further customization into a full-fledged shopping website.
-# Features
+# React + Vite
 
-* Fully responsive design (mobile, tablet & desktop)
-* Clean and modern UI layout
-* Product cards with pricing and details
-* Category sections for easy navigation
-* Cart-ready structure (easy to extend)
-* Smooth UI interactions using JavaScript
-* Easy-to-customize CSS styles
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-# Built With
+## React Compiler
 
-* **HTML5** – semantic and structured markup
-* **CSS3** – responsive layout and styling
-* **JavaScript (Vanilla)** – interactivity and UI behavior
-# Project Structure
-StyleHub/
-│
-├── index.html
-├── OtherPages of html 
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── assets/
-│   └── images/
-└── README.md
-#Use Cases
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-* Frontend practice project
-* E-commerce UI template
-* College or internship project
-* Base layout for full-stack shopping apps
-* Portfolio showcase
+## Expanding the Oxlint configuration
 
-# Customization
-
-You can easily:
-
-* Add backend functionality (PHP, Node.js, Laravel, etc.)
-* Connect APIs for dynamic products
-* Implement cart, checkout, and authentication
-* Enhance UI with animations or frameworks
-
-## Contributing
-
-Contributions are welcome!
-Feel free to fork the repo, improve features, and submit a pull request.
-
-
-#Author
-
-**Muhammad Shaharyar**
-
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-brutal: 'Archivo Black', system-ui, sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply antialiased bg-white text-neutral-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight text-black;
+  }
+
+  button {
+    cursor: pointer !important;
+  }
+}
+
