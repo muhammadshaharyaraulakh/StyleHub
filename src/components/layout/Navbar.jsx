@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -16,9 +18,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu on route change
+  // Close menus on route change
   useEffect(() => {
     setIsOpen(false);
+    setIsSearchOpen(false);
+    setIsProfileOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
@@ -51,12 +55,12 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 to={link.path}
-                className="font-medium text-sm hover:text-gray-500 transition-colors uppercase tracking-widest"
+                className="font-medium text-xs xl:text-sm hover:text-gray-500 transition-colors uppercase tracking-wide xl:tracking-widest"
               >
                 {link.name}
               </Link>
@@ -75,7 +79,10 @@ const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center gap-4 lg:gap-6">
-            <button className="lg:hidden text-black p-1">
+            <button 
+              className="lg:hidden text-black p-1"
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+            >
               <Search size={22} strokeWidth={2.5} />
             </button>
             <Link to="/cart" className="text-black p-1 relative">
@@ -84,19 +91,47 @@ const Navbar = () => {
                 2
               </span>
             </Link>
-            <div className="relative group hidden sm:block">
-              <button className="text-black p-1">
+            <div className="relative">
+              <button 
+                className="text-black p-1"
+                onClick={() => setIsProfileOpen(!isProfileOpen)}
+              >
                 <User size={22} strokeWidth={2.5} />
               </button>
-              <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden flex flex-col z-[100]">
-                <Link to="/login" className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b border-gray-100 text-left">Login</Link>
-                <Link to="/orders" className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b border-gray-100 text-left">My Orders</Link>
+              <div className={`absolute right-0 top-full mt-2 w-48 bg-white border-2 border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 overflow-hidden flex flex-col z-[100] ${isProfileOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                <Link to="/login" className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-left">Login</Link>
+                <Link to="/orders" className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-left">My Orders</Link>
                 <Link to="/login" className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider text-red-500 text-left">Logout</Link>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile Search Dropdown */}
+      <AnimatePresence>
+        {isSearchOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 bg-white p-4 shadow-xl border-t-2 border-black z-[60] lg:hidden"
+          >
+            <div className="flex items-center bg-gray-100 rounded-full px-4 py-3 border-2 border-black">
+              <Search size={20} className="text-gray-500 mr-2" />
+              <input 
+                autoFocus
+                type="text" 
+                placeholder="Search for products..." 
+                className="bg-transparent border-none outline-none w-full text-base font-medium placeholder-gray-500"
+              />
+              <button onClick={() => setIsSearchOpen(false)} className="ml-2 text-black">
+                <X size={20} strokeWidth={3} />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
