@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Search, ShoppingCart, User } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Search, ShoppingCart, User } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +14,8 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close menus on route change
@@ -26,30 +26,35 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Shop', path: '/shop' },
-    { name: 'On Sale', path: '/shop?sale=true' },
-    { name: 'New Arrivals', path: '/shop?new=true' },
-    { name: 'Brands', path: '/shop?brands=true' },
+    { name: "Shop", path: "/shop" },
+    { name: "On Sale", path: "/sale" },
+    { name: "New Arrivals", path: "/newarrivals" },
+    { name: "Brands", path: "/brands" },
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-white py-5'
+        isScrolled
+          ? "bg-white shadow-[0px_4px_0px_0px_rgba(0,0,0,1)] border-b-2 border-black py-3"
+          : "bg-white py-5 border-b-2 border-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Mobile Menu Toggle & Logo */}
           <div className="flex items-center gap-4">
-            <button 
+            <button
               className="lg:hidden block text-black p-1"
               onClick={() => setIsOpen(true)}
               aria-label="Open Menu"
             >
               <Menu size={24} strokeWidth={2.5} />
             </button>
-            <Link to="/" className="font-brutal text-2xl lg:text-3xl tracking-tighter uppercase">
+            <Link
+              to="/"
+              className="font-brutal text-2xl lg:text-3xl tracking-tighter uppercase"
+            >
               Style Hub
             </Link>
           </div>
@@ -57,8 +62,8 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
+              <Link
+                key={link.name}
                 to={link.path}
                 className="font-medium text-xs xl:text-sm hover:text-gray-500 transition-colors uppercase tracking-wide xl:tracking-widest"
               >
@@ -70,16 +75,16 @@ const Navbar = () => {
           {/* Search Bar (Desktop) */}
           <div className="hidden lg:flex items-center bg-gray-100 rounded-full px-4 py-2 w-full max-w-sm ml-6">
             <Search size={18} className="text-gray-500 mr-2" />
-            <input 
-              type="text" 
-              placeholder="Search for products..." 
+            <input
+              type="text"
+              placeholder="Search for products"
               className="bg-transparent border-none outline-none w-full text-sm font-medium placeholder-gray-500"
             />
           </div>
 
           {/* Icons */}
           <div className="flex items-center gap-4 lg:gap-6">
-            <button 
+            <button
               className="lg:hidden text-black p-1"
               onClick={() => setIsSearchOpen(!isSearchOpen)}
             >
@@ -92,16 +97,43 @@ const Navbar = () => {
               </span>
             </Link>
             <div className="relative">
-              <button 
+              <button
                 className="text-black p-1"
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
               >
                 <User size={22} strokeWidth={2.5} />
               </button>
-              <div className={`absolute right-0 top-full mt-2 w-48 bg-white border-2 border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 overflow-hidden flex flex-col z-[100] ${isProfileOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
-                <Link to="/login" className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-left">Login</Link>
-                <Link to="/orders" className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-left">My Orders</Link>
-                <Link to="/login" className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider text-red-500 text-left">Logout</Link>
+              <div
+                className={`absolute right-0 top-full mt-2 w-48 bg-white border-2 border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 overflow-hidden flex flex-col z-[100] ${
+                  isProfileOpen
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-2"
+                }`}
+              >
+                <Link
+                  to="/login"
+                  className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-left"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/profile"
+                  className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-left"
+                >
+                  My Profile
+                </Link>
+                <Link
+                  to="/orders"
+                  className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-left"
+                >
+                  My Orders
+                </Link>
+                <Link
+                  to="/login"
+                  className="px-5 py-3 hover:bg-gray-50 text-sm font-bold uppercase tracking-wider text-red-500 text-left"
+                >
+                  Logout
+                </Link>
               </div>
             </div>
           </div>
@@ -111,7 +143,7 @@ const Navbar = () => {
       {/* Mobile Search Dropdown */}
       <AnimatePresence>
         {isSearchOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -119,13 +151,16 @@ const Navbar = () => {
           >
             <div className="flex items-center bg-gray-100 rounded-full px-4 py-3 border-2 border-black">
               <Search size={20} className="text-gray-500 mr-2" />
-              <input 
+              <input
                 autoFocus
-                type="text" 
-                placeholder="Search for products..." 
+                type="text"
+                placeholder="Search for products..."
                 className="bg-transparent border-none outline-none w-full text-base font-medium placeholder-gray-500"
               />
-              <button onClick={() => setIsSearchOpen(false)} className="ml-2 text-black">
+              <button
+                onClick={() => setIsSearchOpen(false)}
+                className="ml-2 text-black"
+              >
                 <X size={20} strokeWidth={3} />
               </button>
             </div>
@@ -137,33 +172,39 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
               className="fixed inset-0 bg-black/50 z-[60] lg:hidden"
             />
-            <motion.div 
-              initial={{ x: '-100%' }}
+            <motion.div
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", bounce: 0, duration: 0.4 }}
               className="fixed top-0 left-0 bottom-0 w-[85%] max-w-[320px] bg-white z-[70] p-6 flex flex-col shadow-2xl"
             >
               <div className="flex items-center justify-between mb-8">
-                <Link to="/" className="font-brutal text-2xl tracking-tighter uppercase">
+                <Link
+                  to="/"
+                  className="font-brutal text-2xl tracking-tighter uppercase"
+                >
                   Style Hub
                 </Link>
-                <button onClick={() => setIsOpen(false)} className="p-1 text-black bg-gray-100 rounded-full">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-1 text-black bg-gray-100 rounded-full"
+                >
                   <X size={20} strokeWidth={3} />
                 </button>
               </div>
 
               <div className="flex flex-col gap-6 flex-grow">
                 {navLinks.map((link) => (
-                  <Link 
-                    key={link.name} 
+                  <Link
+                    key={link.name}
                     to={link.path}
                     className="text-lg font-heading font-bold uppercase tracking-wider border-b border-gray-100 pb-2"
                   >
@@ -172,11 +213,23 @@ const Navbar = () => {
                 ))}
               </div>
 
-              <div className="flex flex-col gap-4 mt-auto">
-                <Link to="/login" className="w-full py-3 text-center border-2 border-black font-bold uppercase tracking-wider hover:bg-gray-50 transition-colors">
+              <div className="flex flex-col gap-4 mt-auto pt-8">
+                <Link
+                  to="/profile"
+                  className="w-full py-3 text-center border-2 border-black font-bold uppercase tracking-wider hover:bg-gray-50 transition-colors"
+                >
+                  My Profile
+                </Link>
+                <Link
+                  to="/login"
+                  className="w-full py-3 text-center border-2 border-black font-bold uppercase tracking-wider hover:bg-gray-50 transition-colors"
+                >
                   Log In
                 </Link>
-                <Link to="/signup" className="w-full py-3 text-center bg-black text-white font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors">
+                <Link
+                  to="/signup"
+                  className="w-full py-3 text-center border-2 border-black bg-black text-white font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
+                >
                   Sign Up
                 </Link>
               </div>

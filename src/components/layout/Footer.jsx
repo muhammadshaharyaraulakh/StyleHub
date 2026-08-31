@@ -1,5 +1,5 @@
 import { Mail } from 'lucide-react';
-import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from 'react-icons/fa6';
+import { FaTwitter, FaFacebookF, FaInstagram, FaGithub, FaCcVisa, FaCcMastercard, FaCcPaypal, FaCcApplePay } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -8,23 +8,23 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         
         {/* Newsletter Section */}
-        <div className="bg-black text-white rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 mb-16 -mt-32 relative z-10 shadow-2xl">
+        <div className="bg-white text-black border-2 border-black rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 mb-16 -mt-32 relative z-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
           <h2 className="font-brutal text-3xl md:text-4xl uppercase max-w-md leading-tight text-center lg:text-left">
             STAY UPTO DATE ABOUT OUR LATEST OFFERS
           </h2>
           <form className="w-full max-w-sm flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
             <div className="relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-black" size={20} />
               <input 
                 type="email" 
                 placeholder="Enter your email address" 
-                className="w-full pl-12 pr-4 py-3 rounded-full text-black outline-none font-medium placeholder-gray-500 focus:ring-2 focus:ring-gray-300"
+                className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-black text-black outline-none font-medium placeholder-gray-500 focus:ring-0 focus:outline-none"
                 required
               />
             </div>
             <button 
               type="submit"
-              className="w-full bg-white text-black font-bold uppercase tracking-wide py-3 rounded-full hover:bg-gray-200 transition-colors"
+              className="w-full bg-black text-white font-bold uppercase tracking-wide py-3 rounded-xl border-2 border-black hover:bg-gray-900 transition-colors"
             >
               Subscribe to Newsletter
             </button>
@@ -76,11 +76,11 @@ const Footer = () => {
           <p className="text-gray-500 font-medium text-sm text-center md:text-left">
             Style Hub © 2026 All Rights Reserved
           </p>
-          <div className="flex gap-2">
-            <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold">VISA</div>
-            <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-red-500">MC</div>
-            <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-blue-600">PayPal</div>
-            <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold">Pay</div>
+          <div className="flex gap-2 text-3xl">
+            <FaCcVisa className="text-black" />
+            <FaCcMastercard className="text-black" />
+            <FaCcPaypal className="text-black" />
+            <FaCcApplePay className="text-black" />
           </div>
         </div>
 

@@ -10,6 +10,10 @@ import Signup from './pages/Signup';
 import ForgetPassword from './pages/ForgetPassword';
 import Verification from './pages/Verification';
 import OrderHistory from './pages/OrderHistory';
+import OnSale from './pages/OnSale';
+import NewArrivals from './pages/NewArrivals';
+import Brands from './pages/Brands';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -27,6 +31,10 @@ function App() {
             <Route path="/forget-password" element={<ForgetPassword />} />
             <Route path="/verification" element={<Verification />} />
             <Route path="/orders" element={<OrderHistory />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/sale" element={<OnSale />} />
+            <Route path="/newarrivals" element={<NewArrivals />} />
+            <Route path="/brands" element={<Brands />} />
           </Routes>
         </main>
         <Footer />

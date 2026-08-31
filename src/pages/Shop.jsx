@@ -14,16 +14,22 @@ const CATEGORIES = [
 const SIZES = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL'];
 
 // Reusing same products from Home for the Shop view
-const PRODUCTS = [
+const BASE_PRODUCTS = [
   { id: 1, name: 'T shirt with Tape Details', price: 120, image: '/assests/TShirtWithTapeDetails.png' },
   { id: 2, name: 'Skinny Fit Jeans', price: 240, oldPrice: 260, discount: '-20%', image: '/assests/SkinnyFitJeans.png' },
   { id: 3, name: 'Checkered Shirt', price: 180, image: '/assests/CheckeredShirt.png' },
   { id: 4, name: 'Sleeve Striped T shirt', price: 130, oldPrice: 160, discount: '-30%', image: '/assests/ShirtSleeveStriped.png' },
   { id: 5, name: 'Vertical Striped Shirt', price: 212, oldPrice: 232, discount: '-20%', image: '/assests/VerticalStriped.png' },
   { id: 6, name: 'Courage Graphic T shirt', price: 145, image: '/assests/CourageGraphicTshirt.png' },
-  { id: 7, name: 'Loose Fit Bermuda Shorts', price: 80, image: '/assests/LooseFitBermudaShort.png' },
   { id: 8, name: 'Faded Skinny Jeans', price: 210, image: '/assests/FadedSkinnyJean.png' }
 ];
+
+// Duplicate products to fill out 2 pages (16 items total) for demonstration
+const PRODUCTS = [
+  ...BASE_PRODUCTS,
+  ...BASE_PRODUCTS.map(p => ({ ...p, id: p.id + 10 })),
+  ...BASE_PRODUCTS.map(p => ({ ...p, id: p.id + 20 }))
+].slice(0, 16);
 
 const Shop = () => {
   const [activeCategory, setActiveCategory] = useState('All Products');
@@ -32,6 +38,15 @@ const Shop = () => {
   const [isPriceOpen, setIsPriceOpen] = useState(true);
   const [isSizeOpen, setIsSizeOpen] = useState(true);
   const [selectedSizes, setSelectedSizes] = useState(['L']);
+  
+  const SORT_OPTIONS = ['Most Popular', 'Newest', 'Price: Low to High', 'Price: High to Low'];
+  const [activeSort, setActiveSort] = useState(SORT_OPTIONS[0]);
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 8;
+  const totalPages = Math.ceil(PRODUCTS.length / productsPerPage);
+  const currentProducts = PRODUCTS.slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage);
 
   const toggleSize = (size) => {
     setSelectedSizes(prev => 
@@ -129,7 +144,10 @@ const Shop = () => {
         </AnimatePresence>
       </div>
 
-      <button className="w-full bg-black text-white font-bold uppercase py-4 rounded-full mt-2 hover:bg-gray-800 transition-colors">
+      <button 
+        onClick={() => setIsMobileFiltersOpen(false)}
+        className="w-full bg-black text-white font-bold uppercase py-4 rounded-xl mt-2 border-2 border-black hover:bg-gray-800 transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+      >
         Apply Filter
       </button>
     </div>
@@ -163,14 +181,14 @@ const Shop = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setIsMobileFiltersOpen(false)}
-                className="fixed inset-0 bg-black/50 z-[60] lg:hidden"
+                className="fixed inset-0 bg-black/50 z-[60] lg:hidden backdrop-blur-sm"
               />
               <motion.div 
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                exit={{ y: '100%' }}
+                initial={{ opacity: 0, scale: 0.9, y: 20, x: '-50%' }}
+                animate={{ opacity: 1, scale: 1, y: '-50%', x: '-50%' }}
+                exit={{ opacity: 0, scale: 0.9, y: 20, x: '-50%' }}
                 transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
-                className="fixed bottom-0 left-0 right-0 bg-white z-[70] p-6 rounded-t-3xl max-h-[85vh] overflow-y-auto lg:hidden"
+                className="fixed top-1/2 left-1/2 w-[90%] max-w-md bg-white z-[70] p-6 rounded-3xl max-h-[85vh] overflow-y-auto lg:hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-2 border-black"
               >
                 <div className="flex items-center justify-between mb-6 pb-6 border-b border-gray-200 sticky top-0 bg-white z-10">
                   <h2 className="font-heading font-bold text-xl uppercase">Filters</h2>
@@ -187,22 +205,48 @@ const Shop = () => {
         {/* Main Content */}
         <div className="flex-1">
           <div className="flex items-center justify-between mb-8">
-            <h1 className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl uppercase tracking-tight">
+            <h1 className="font-heading font-bold text-xl min-[400px]:text-2xl md:text-3xl lg:text-4xl uppercase tracking-tight">
               {activeCategory}
             </h1>
             
             <div className="flex items-center gap-4">
-              <span className="hidden md:block text-gray-500 font-medium">
-                Showing 1-8 of 100 Products
-              </span>
               <div className="flex items-center gap-2 text-sm font-medium">
                 <span className="text-gray-500 hidden sm:block">Sort by:</span>
-                <select className="font-bold bg-transparent outline-none cursor-pointer">
-                  <option>Most Popular</option>
-                  <option>Newest</option>
-                  <option>Price: Low to High</option>
-                  <option>Price: High to Low</option>
-                </select>
+                <div className="relative">
+                  <button 
+                    onClick={() => setIsSortOpen(!isSortOpen)}
+                    className="flex items-center gap-2 font-bold bg-white text-black border-2 border-black rounded-xl px-4 py-2 outline-none cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  >
+                    {activeSort}
+                    <ChevronDown size={16} className={`transition-transform ${isSortOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  <AnimatePresence>
+                    {isSortOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute right-0 top-full mt-2 w-48 bg-white border-2 border-black rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-50 flex flex-col"
+                      >
+                        {SORT_OPTIONS.map(option => (
+                          <button
+                            key={option}
+                            onClick={() => {
+                              setActiveSort(option);
+                              setIsSortOpen(false);
+                            }}
+                            className={`px-4 py-3 text-left font-bold border-b-2 border-black last:border-b-0 hover:bg-gray-100 transition-colors ${
+                              activeSort === option ? 'bg-black text-white hover:bg-gray-900' : 'text-black'
+                            }`}
+                          >
+                            {option}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
               <button 
                 className="lg:hidden w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-black"
@@ -214,28 +258,47 @@ const Shop = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-            {PRODUCTS.map(product => (
+            {currentProducts.map(product => (
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-center justify-between">
-            <button className="flex items-center gap-2 font-medium px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm md:text-base">
+            <button 
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              className={`flex items-center gap-2 font-bold px-4 py-2 border-2 border-black rounded-xl transition-all text-sm md:text-base ${
+                currentPage === 1 
+                  ? 'opacity-50 cursor-not-allowed bg-gray-100' 
+                  : 'hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white'
+              }`}
+            >
               <ChevronRight size={16} className="rotate-180" /> Previous
             </button>
-            <div className="flex gap-1 md:gap-2">
-              {[1, 2, 3, '...', 8, 9, 10].map((page, i) => (
+            <div className="hidden md:flex gap-1 md:gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button 
-                  key={i} 
-                  className={`w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center font-medium text-sm md:text-base transition-colors ${
-                    page === 1 ? 'bg-black text-white' : 'hover:bg-gray-100 text-gray-500'
+                  key={page} 
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-8 h-8 md:w-10 md:h-10 rounded-xl border-2 border-black flex items-center justify-center font-bold text-sm md:text-base transition-all ${
+                    page === currentPage 
+                      ? 'bg-black text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
+                      : 'bg-white text-black hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
                   }`}
                 >
                   {page}
                 </button>
               ))}
             </div>
-            <button className="flex items-center gap-2 font-medium px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm md:text-base">
+            <button 
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              className={`flex items-center gap-2 font-bold px-4 py-2 border-2 border-black rounded-xl transition-all text-sm md:text-base ${
+                currentPage === totalPages 
+                  ? 'opacity-50 cursor-not-allowed bg-gray-100' 
+                  : 'hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white'
+              }`}
+            >
               Next <ChevronRight size={16} />
             </button>
           </div>
