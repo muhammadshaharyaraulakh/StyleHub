@@ -15,13 +15,13 @@ const SIZES = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL'];
 
 // Reusing same products from Home for the Shop view
 const BASE_PRODUCTS = [
-  { id: 1, name: 'T shirt with Tape Details', price: 120, image: '/assests/TShirtWithTapeDetails.png' },
-  { id: 2, name: 'Skinny Fit Jeans', price: 240, oldPrice: 260, discount: '-20%', image: '/assests/SkinnyFitJeans.png' },
-  { id: 3, name: 'Checkered Shirt', price: 180, image: '/assests/CheckeredShirt.png' },
-  { id: 4, name: 'Sleeve Striped T shirt', price: 130, oldPrice: 160, discount: '-30%', image: '/assests/ShirtSleeveStriped.png' },
-  { id: 5, name: 'Vertical Striped Shirt', price: 212, oldPrice: 232, discount: '-20%', image: '/assests/VerticalStriped.png' },
-  { id: 6, name: 'Courage Graphic T shirt', price: 145, image: '/assests/CourageGraphicTshirt.png' },
-  { id: 8, name: 'Faded Skinny Jeans', price: 210, image: '/assests/FadedSkinnyJean.png' }
+  { id: 1, name: 'T shirt with Tape Details', price: 120, image: '/assests/TShirtWithTapeDetails.webp' },
+  { id: 2, name: 'Skinny Fit Jeans', price: 240, oldPrice: 260, discount: '-20%', image: '/assests/SkinnyFitJeans.webp' },
+  { id: 3, name: 'Checkered Shirt', price: 180, image: '/assests/CheckeredShirt.webp' },
+  { id: 4, name: 'Sleeve Striped T shirt', price: 130, oldPrice: 160, discount: '-30%', image: '/assests/ShirtSleeveStriped.webp' },
+  { id: 5, name: 'Vertical Striped Shirt', price: 212, oldPrice: 232, discount: '-20%', image: '/assests/VerticalStriped.webp' },
+  { id: 6, name: 'Courage Graphic T shirt', price: 145, image: '/assests/CourageGraphicTshirt.webp' },
+  { id: 8, name: 'Faded Skinny Jeans', price: 210, image: '/assests/FadedSkinnyJean.webp' }
 ];
 
 // Duplicate products to fill out 2 pages (16 items total) for demonstration

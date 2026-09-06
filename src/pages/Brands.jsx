@@ -7,14 +7,14 @@ import ProductCard from '../components/ui/ProductCard';
 const BRAND_NAMES = ['All Brands', 'VERSACE', 'ZARA', 'GUCCI', 'PRADA', 'CALVIN KLEIN'];
 
 const GENERATED_IMAGES = [
-  { id: 1, name: 'Stylish Casual Shirt', price: 85, brand: 'ZARA', image: '/assests/mens_shirt_1788163219906.png' },
-  { id: 2, name: 'Premium Cargo Pants', price: 140, brand: 'PRADA', image: '/assests/mens_pants_1788163230854.png' },
-  { id: 3, name: 'Elegant Three-Piece Suit', price: 450, brand: 'VERSACE', image: '/assests/mens_suit_1788163245660.png' },
-  { id: 4, name: 'Velvet Evening Dress', price: 320, brand: 'GUCCI', image: '/assests/womens_dress_1788163258500.png' },
-  { id: 5, name: 'Kids Explorer Outfit', price: 65, brand: 'CALVIN KLEIN', image: '/assests/children_wear_1788163286675.png' },
-  { id: 6, name: 'Tailored Black Trousers', price: 110, brand: 'ZARA', image: '/assests/womens_pants_1788163298075.png' },
-  { id: 7, name: 'Classic Leather Jacket', price: 280, brand: 'GUCCI', image: '/assests/mens_jacket_1788163311260.png' },
-  { id: 8, name: 'Silk Button Blouse', price: 95, brand: 'PRADA', image: '/assests/womens_blouse_1788163330169.png' }
+  { id: 1, name: 'Stylish Casual Shirt', price: 85, brand: 'ZARA', image: '/assests/mens_shirt_1788163219906.webp' },
+  { id: 2, name: 'Premium Cargo Pants', price: 140, brand: 'PRADA', image: '/assests/mens_pants_1788163230854.webp' },
+  { id: 3, name: 'Elegant Three-Piece Suit', price: 450, brand: 'VERSACE', image: '/assests/mens_suit_1788163245660.webp' },
+  { id: 4, name: 'Velvet Evening Dress', price: 320, brand: 'GUCCI', image: '/assests/womens_dress_1788163258500.webp' },
+  { id: 5, name: 'Kids Explorer Outfit', price: 65, brand: 'CALVIN KLEIN', image: '/assests/children_wear_1788163286675.webp' },
+  { id: 6, name: 'Tailored Black Trousers', price: 110, brand: 'ZARA', image: '/assests/womens_pants_1788163298075.webp' },
+  { id: 7, name: 'Classic Leather Jacket', price: 280, brand: 'GUCCI', image: '/assests/mens_jacket_1788163311260.webp' },
+  { id: 8, name: 'Silk Button Blouse', price: 95, brand: 'PRADA', image: '/assests/womens_blouse_1788163330169.webp' }
 ];
 
 const PRODUCTS = [

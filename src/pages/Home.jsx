@@ -9,7 +9,7 @@ const newArrivals = [
     id: 1,
     name: "T shirt with Tape Details",
     price: 120,
-    image: "/assests/TShirtWithTapeDetails.png",
+    image: "/assests/TShirtWithTapeDetails.webp",
   },
   {
     id: 2,
@@ -17,13 +17,13 @@ const newArrivals = [
     price: 240,
     oldPrice: 260,
     discount: "-20%",
-    image: "/assests/SkinnyFitJeans.png",
+    image: "/assests/SkinnyFitJeans.webp",
   },
   {
     id: 3,
     name: "Checkered Shirt",
     price: 180,
-    image: "/assests/CheckeredShirt.png",
+    image: "/assests/CheckeredShirt.webp",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const newArrivals = [
     price: 130,
     oldPrice: 160,
     discount: "-30%",
-    image: "/assests/ShirtSleeveStriped.png",
+    image: "/assests/ShirtSleeveStriped.webp",
   },
 ];
 
@@ -42,25 +42,25 @@ const topSelling = [
     price: 212,
     oldPrice: 232,
     discount: "-20%",
-    image: "/assests/VerticalStriped.png",
+    image: "/assests/VerticalStriped.webp",
   },
   {
     id: 6,
     name: "Courage Graphic T shirt",
     price: 145,
-    image: "/assests/CourageGraphicTshirt.png",
+    image: "/assests/CourageGraphicTshirt.webp",
   },
   {
     id: 7,
     name: "T shirt with Tape Details",
     price: 120,
-    image: "/assests/TShirtWithTapeDetails.png",
+    image: "/assests/TShirtWithTapeDetails.webp",
   },
   {
     id: 8,
     name: "Faded Skinny Jeans",
     price: 210,
-    image: "/assests/FadedSkinnyJean.png",
+    image: "/assests/FadedSkinnyJean.webp",
   },
 ];
 
@@ -147,8 +147,10 @@ const Home = () => {
               </motion.svg>
 
               <img
-                src="/assests/HeroImage.png"
+                src="/assests/HeroImage.webp"
                 alt="Fashion Couple"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full max-w-[500px] object-cover object-top h-[500px] lg:h-[650px]"
               />
             </motion.div>
@@ -235,9 +237,11 @@ const Home = () => {
               className="group relative h-48 md:h-64 rounded-2xl overflow-hidden md:col-span-1 border-2 border-black transition-colors"
             >
               <img
-                src="/assests/Casual.png"
+                src="/assests/Casual.webp"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 alt="Casual"
+                loading="lazy"
+                decoding="async"
               />
               <h3 className="absolute top-6 left-6 font-heading font-bold text-2xl uppercase bg-white/90 px-4 py-1 rounded">
                 Casual
@@ -248,9 +252,11 @@ const Home = () => {
               className="group relative h-48 md:h-64 rounded-2xl overflow-hidden md:col-span-2 border-2 border-black transition-colors"
             >
               <img
-                src="/assests/Formal.png"
+                src="/assests/Formal.webp"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 alt="Formal"
+                loading="lazy"
+                decoding="async"
               />
               <h3 className="absolute top-6 left-6 font-heading font-bold text-2xl uppercase bg-white/90 px-4 py-1 rounded">
                 Formal
@@ -261,9 +267,11 @@ const Home = () => {
               className="group relative h-48 md:h-64 rounded-2xl overflow-hidden md:col-span-2 border-2 border-black transition-colors"
             >
               <img
-                src="/assests/Party.png"
+                src="/assests/Party.webp"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 alt="Party"
+                loading="lazy"
+                decoding="async"
               />
               <h3 className="absolute top-6 left-6 font-heading font-bold text-2xl uppercase bg-white/90 px-4 py-1 rounded">
                 Party
@@ -274,9 +282,11 @@ const Home = () => {
               className="group relative h-48 md:h-64 rounded-2xl overflow-hidden md:col-span-1 border-2 border-black transition-colors"
             >
               <img
-                src="/assests/Gym.png"
+                src="/assests/Gym.webp"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 alt="Gym"
+                loading="lazy"
+                decoding="async"
               />
               <h3 className="absolute top-6 left-6 font-heading font-bold text-2xl uppercase bg-white/90 px-4 py-1 rounded">
                 Gym

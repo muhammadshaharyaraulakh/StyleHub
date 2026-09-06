@@ -15,14 +15,14 @@ const faqs = [
 const SingleProduct = () => {
   const [activeTab, setActiveTab] = useState('rating');
   const [quantity, setQuantity] = useState(1);
-  const [mainImage, setMainImage] = useState('/assests/TShirtWithTapeDetails.png');
+  const [mainImage, setMainImage] = useState('/assests/TShirtWithTapeDetails.webp');
   const [visibleReviews, setVisibleReviews] = useState(4);
   const [isCartPopupOpen, setIsCartPopupOpen] = useState(false);
 
   const thumbnails = [
-    '/assests/TShirtWithTapeDetails.png',
-    '/assests/CourageGraphicTshirt.png',
-    '/assests/CheckeredShirt.png'
+    '/assests/TShirtWithTapeDetails.webp',
+    '/assests/CourageGraphicTshirt.webp',
+    '/assests/CheckeredShirt.webp'
   ];
 
   const baseReviews = [
@@ -62,12 +62,12 @@ const SingleProduct = () => {
                 onClick={() => setMainImage(img)}
                 className={`w-24 h-24 lg:w-36 lg:h-36 shrink-0 bg-[#F0EEED] rounded-3xl border-2 overflow-hidden ${mainImage === img ? 'border-black' : 'border-transparent'}`}
               >
-                <img src={img} alt="Thumbnail" className="w-full h-full object-cover mix-blend-multiply" />
+                <img src={img} alt="Thumbnail" loading="lazy" decoding="async" className="w-full h-full object-cover mix-blend-multiply" />
               </button>
             ))}
           </div>
           <div className="flex-1 bg-[#F0EEED] rounded-3xl overflow-hidden aspect-square flex items-center justify-center">
-            <img src={mainImage} alt="Main Product" className="w-full h-full object-cover mix-blend-multiply" />
+            <img src={mainImage} alt="Main Product" fetchPriority="high" decoding="async" className="w-full h-full object-cover mix-blend-multiply" />
           </div>
         </div>
 

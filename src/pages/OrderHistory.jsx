@@ -11,8 +11,8 @@ const ORDERS = [
     status: 'Delivered',
     total: 325,
     items: [
-      { name: 'Gradient Graphic T shirt', qty: 1, image: '/assests/TShirtWithTapeDetails.png' },
-      { name: 'Skinny Fit Jeans', qty: 1, image: '/assests/FadedSkinnyJean.png' }
+      { name: 'Gradient Graphic T shirt', qty: 1, image: '/assests/TShirtWithTapeDetails.webp' },
+      { name: 'Skinny Fit Jeans', qty: 1, image: '/assests/FadedSkinnyJean.webp' }
     ]
   },
   {
@@ -21,7 +21,7 @@ const ORDERS = [
     status: 'Processing',
     total: 180,
     items: [
-      { name: 'Checkered Shirt', qty: 1, image: '/assests/CheckeredShirt.png' }
+      { name: 'Checkered Shirt', qty: 1, image: '/assests/CheckeredShirt.webp' }
     ]
   }
 ];
@@ -87,7 +87,7 @@ const OrderHistory = () => {
                 {order.items.map((item, idx) => (
                   <div key={idx} className="flex gap-4 shrink-0 w-[240px] sm:w-64 items-center snap-start border-2 border-gray-100 p-3 rounded-2xl">
                     <div className="w-20 h-20 bg-[#F0EEED] rounded-xl shrink-0 overflow-hidden border-2 border-black">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-cover mix-blend-multiply" />
+                      <img src={item.image} alt={item.name} loading="lazy" decoding="async" className="w-full h-full object-cover mix-blend-multiply" />
                     </div>
                     <div>
                       <p className="font-bold text-sm leading-tight line-clamp-2 mb-1">{item.name}</p>

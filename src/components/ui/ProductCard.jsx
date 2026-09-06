@@ -16,6 +16,7 @@ const ProductCard = ({ id, image, name, price, oldPrice, discount }) => {
           alt={name} 
           className="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
+          decoding="async"
         />
         {discount && (
           <div className="absolute top-3 left-3 bg-red-100 text-red-500 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">

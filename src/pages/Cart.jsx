@@ -12,7 +12,7 @@ const INITIAL_CART = [
     color: 'White',
     price: 145,
     quantity: 1,
-    image: '/assests/TShirtWithTapeDetails.png'
+    image: '/assests/TShirtWithTapeDetails.webp'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const INITIAL_CART = [
     color: 'Blue',
     price: 180,
     quantity: 1,
-    image: '/assests/FadedSkinnyJean.png'
+    image: '/assests/FadedSkinnyJean.webp'
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const INITIAL_CART = [
     color: 'Red',
     price: 180,
     quantity: 1,
-    image: '/assests/CheckeredShirt.png'
+    image: '/assests/CheckeredShirt.webp'
   }
 ];
 
@@ -100,7 +100,7 @@ const Cart = () => {
                   className="flex gap-4 p-4 md:p-6 border border-gray-200 rounded-3xl"
                 >
                   <div className="w-24 h-24 md:w-32 md:h-32 bg-[#F0EEED] rounded-xl flex-shrink-0">
-                    <img src={item.image} alt={item.name} className="w-full h-full object-cover mix-blend-multiply" />
+                    <img src={item.image} alt={item.name} loading="lazy" decoding="async" className="w-full h-full object-cover mix-blend-multiply" />
                   </div>
                   
                   <div className="flex flex-col justify-between flex-1">

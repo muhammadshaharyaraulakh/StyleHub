@@ -3,14 +3,14 @@ import { ChevronRight } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
 
 const GENERATED_IMAGES = [
-  { id: 1, name: 'Stylish Casual Shirt', price: 85, oldPrice: 120, discount: '-30%', image: '/assests/mens_shirt_1788163219906.png' },
-  { id: 2, name: 'Premium Cargo Pants', price: 140, image: '/assests/mens_pants_1788163230854.png' },
-  { id: 3, name: 'Elegant Three-Piece Suit', price: 450, oldPrice: 550, discount: '-18%', image: '/assests/mens_suit_1788163245660.png' },
-  { id: 4, name: 'Velvet Evening Dress', price: 320, image: '/assests/womens_dress_1788163258500.png' },
-  { id: 5, name: 'Kids Explorer Outfit', price: 65, oldPrice: 80, discount: '-20%', image: '/assests/children_wear_1788163286675.png' },
-  { id: 6, name: 'Tailored Black Trousers', price: 110, image: '/assests/womens_pants_1788163298075.png' },
-  { id: 7, name: 'Classic Leather Jacket', price: 280, oldPrice: 350, discount: '-20%', image: '/assests/mens_jacket_1788163311260.png' },
-  { id: 8, name: 'Silk Button Blouse', price: 95, image: '/assests/womens_blouse_1788163330169.png' }
+  { id: 1, name: 'Stylish Casual Shirt', price: 85, oldPrice: 120, discount: '-30%', image: '/assests/mens_shirt_1788163219906.webp' },
+  { id: 2, name: 'Premium Cargo Pants', price: 140, image: '/assests/mens_pants_1788163230854.webp' },
+  { id: 3, name: 'Elegant Three-Piece Suit', price: 450, oldPrice: 550, discount: '-18%', image: '/assests/mens_suit_1788163245660.webp' },
+  { id: 4, name: 'Velvet Evening Dress', price: 320, image: '/assests/womens_dress_1788163258500.webp' },
+  { id: 5, name: 'Kids Explorer Outfit', price: 65, oldPrice: 80, discount: '-20%', image: '/assests/children_wear_1788163286675.webp' },
+  { id: 6, name: 'Tailored Black Trousers', price: 110, image: '/assests/womens_pants_1788163298075.webp' },
+  { id: 7, name: 'Classic Leather Jacket', price: 280, oldPrice: 350, discount: '-20%', image: '/assests/mens_jacket_1788163311260.webp' },
+  { id: 8, name: 'Silk Button Blouse', price: 95, image: '/assests/womens_blouse_1788163330169.webp' }
 ];
 
 // Duplicate to reach 16 items for the grid
